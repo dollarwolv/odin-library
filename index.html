@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>j-lib.org - your free library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <h1>j-lib.org</h1>
     <h2>your free library that's totally not sketchy</h2>
     <h3>(you won't get a virus - promise!)</h3>
 
-    <div class="instructions">This site allows your to keep track of the books you've read. No ads, no fluff. Press the button below to get started.</div>
+    <div id="instructions">This site allows your to keep track of the books you've read. No ads, no fluff. Press the button below to get started.</div>
     <button id="first-button">add your first book!</button>
+
+    <form action="submit" class="hidden">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Value">
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" placeholder="Value">
+        <div class="field-wrap">
+            <label for="remarks">How would you describe this book?</label>
+            <textarea name="remarks" id="remarks" placeholder="Value"></textarea>
+        </div>
+        <input type="submit" value="Add to library">
+        <span id="x">x</span>
+    </form>
+
+    <div id="books-container">
+    </div>
 </body>
 </html>
