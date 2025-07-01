@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+/* *{border: 1px solid black} */
+
 html {
     font-size: 20px;
     font-family: "DM Sans";
@@ -143,4 +145,54 @@ label {
 
 .hidden {
     visibility: hidden;
+}
+
+#books-container.hidden {
+    visibility: hidden;
+    height: 0px;
+    margin-top: 0px;
+}
+
+#books-container {
+    display: flex;
+    margin-top: 10vh;
+    gap: 40px;
+}
+
+.book-card {
+    height: 300px;
+    width: 240px;
+    padding: 12px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.title-author {
+    background-color: #D4D0D0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 5px;
+}
+
+.title-author > p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.book-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.book-card-author {
+    font-weight: 250;
+}
+
+.book-card-remarks {
+    font-size: 0.9rem;
+    font-weight: 250;
+    font-style: italic;
 }

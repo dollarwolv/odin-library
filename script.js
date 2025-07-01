@@ -29,10 +29,9 @@ function createBookCard(book) {
     var titleAuthor = document.createElement("div");
     titleAuthor.classList.add("title-author");
     
-
     var divTitle = document.createElement("p");
     divTitle.classList.add("book-card-title");
-    titleAuthor.textContent = book.title;
+    divTitle.textContent = book.title;
 
     var divAuthor = document.createElement("p");
     divAuthor.classList.add("book-card-author");
@@ -40,7 +39,7 @@ function createBookCard(book) {
 
     var divRemarks = document.createElement("p");
     divRemarks.classList.add("book-card-remarks");
-    divRemarks.textContent = book.remarks;
+    divRemarks.innerHTML = `<q>${book.remarks}</q>`;
 
     card.appendChild(titleAuthor);
     titleAuthor.appendChild(divTitle);
@@ -65,10 +64,14 @@ form.addEventListener("submit", (event) => {
 
     for (const book of books) {
         form.classList.add("hidden");
-        addButton.classList.add("hidden");
+        form.reset()
         instructions.classList.add("hidden");
         booksContainer.appendChild(book);
     }
+
+    booksContainer.classList.remove("hidden");
+    instructions.remove();
+    addButton.innerHTML = "add another book";
   
 });
 
